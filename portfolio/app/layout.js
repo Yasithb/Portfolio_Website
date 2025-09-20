@@ -1,5 +1,7 @@
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./context/ThemeContext";
+import Script from "next/script";
 
 const outfit = Outfit({
   subsets: ["latin"], weight: ["400", "500", "600", "700"]
@@ -16,11 +18,24 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
+      <head>
+        <link 
+          rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+          crossOrigin="anonymous" 
+          referrerPolicy="no-referrer" 
+        />
+      </head>
       <body
-        className={`${outfit.className} ${ovo.className} antialiased`}
+        className={`${outfit.className} ${ovo.className} antialiased leading-8
+        overflow-x-hidden`}
+        style={{ minHeight: '100vh' }}
       >
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
