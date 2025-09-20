@@ -73,6 +73,53 @@ body {
   animation: spin-slow 10s linear infinite;
 }
 
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-ping-slow {
+  animation: pingSlow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-float-slow-delay {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+.animate-grow-down {
+  animation: growDown 1.5s ease-out forwards;
+}
+
+.animate-expand {
+  animation: expand 1s ease-out forwards;
+  transform: scaleX(0);
+}
+
+.animate-expand-line {
+  animation: expand 1.2s ease-out forwards;
+  animation-delay: 0.5s;
+  transform: scaleX(0);
+}
+
+.animate-skill-progress {
+  animation: skillProgress 1.5s ease-out forwards;
+  transform-origin: left;
+}
+
 .animate-typewriter {
   position: relative;
   display: inline-block;
@@ -158,6 +205,71 @@ body {
   25% { color: var(--accent-color); }
   50% { color: #4ade80; }
   75% { color: #f97316; }
+}
+
+@keyframes fadeInUp {
+  from { 
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pingSlow {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes growDown {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes skillProgress {
+  0% {
+    width: 0%;
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Hover animations */
