@@ -33,7 +33,7 @@ const Skills = () => {
 
   return (
     <div id="skills" className={`w-full px-[12%] py-24 scroll-mt-20 relative overflow-hidden ${
-      isDark ? 'bg-[#121926]' : 'bg-white'
+      isDark ? 'bg-[#111827]' : 'bg-gray-50'
     }`}>
       {/* Background decoration elements */}
       <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
