@@ -34,7 +34,7 @@ const Footer = () => {
                 width={20}
                 height={20}
               />
-              <span>contact@yasith.dev</span>
+              <span>yasith.banula06@gmail.com</span>
             </div>
           </div>
         </div>

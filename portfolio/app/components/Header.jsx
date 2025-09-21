@@ -38,23 +38,46 @@ const Header = () => {
         <div className='flex flex-row items-center gap-4 mt-4 animate-slide-up'
              style={{ animationDelay: '0.6s' }}>
             <a href="#contact"
-                className={`px-10 py-3 rounded-full flex items-center gap-2 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
-                  isDark 
-                    ? 'bg-blue-600 text-white hover:bg-blue-700'
-                    : 'bg-blue-500 text-white hover:bg-blue-600'
+                className={`group inline-flex items-center justify-center gap-3 px-10 py-3 
+                rounded-full transition-all duration-500 hover:-translate-y-1 hover:shadow-xl
+                ${isDark 
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/20' 
+                  : 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg shadow-blue-500/20'
                 }`}
             >
-              Hire Me
+              <span className="font-medium">Download CV</span>
+              <svg 
+                width="18" 
+                height="18" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="transition-transform duration-300 group-hover:translate-y-1"
+              >
+                <path d="M12 4V16M12 16L8 12M12 16L16 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M5 21H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </a>
 
             <a href="#contact"
-                className={`px-10 py-3 rounded-full flex items-center gap-2 transition-all duration-300 hover:shadow-md hover:-translate-y-1 ${
-                  isDark 
-                    ? 'border border-blue-600 text-white hover:bg-blue-600/20'
-                    : 'border border-blue-500 text-blue-500 hover:bg-blue-50'
+                className={`group inline-flex items-center justify-center gap-3 px-10 py-3 
+                rounded-full transition-all duration-500 hover:-translate-y-1 hover:shadow-xl
+                ${isDark 
+                  ? 'bg-transparent border border-blue-500 text-white hover:bg-blue-500/10' 
+                  : 'bg-transparent border border-blue-500 text-blue-500 hover:bg-blue-50'
                 }`}
             >
-              Let's Talk
+              <span className="font-medium">Let's Talk</span>
+              <svg 
+                width="18" 
+                height="18" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              >
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </a>
         </div>
         

@@ -25,7 +25,7 @@ const Education = () => {
 
   return (
     <div id='education' className={`w-full px-[12%] py-24 scroll-mt-20 relative overflow-hidden ${
-      isDark ? 'bg-[#121926]' : 'bg-white'
+      isDark ? 'bg-[#111827]' : 'bg-gray-50'
     }`}>
       {/* Enhanced background decoration elements */}
       <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
@@ -79,8 +79,8 @@ const Education = () => {
             {/* Timeline dot with pulse animation */}
             <div className={`absolute left-0 top-1.5 w-7 h-7 rounded-full ${
               isDark 
-                ? 'bg-[#121926] border-4 border-blue-500' 
-                : 'bg-white border-4 border-blue-600'
+                ? 'bg-[#111827] border-4 border-blue-500' 
+                : 'bg-gray-50 border-4 border-blue-600'
             } z-10 group-hover:scale-110 transition-transform duration-300`}>
               <div className={`absolute inset-1 rounded-full ${
                 isDark ? 'bg-blue-500/30' : 'bg-blue-600/30'

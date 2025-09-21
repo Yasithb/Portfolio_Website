@@ -10,6 +10,8 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
+    mobile: '',
     message: ''
   });
   
@@ -32,7 +34,7 @@ const Contact = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitSuccess(true);
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', subject: '', mobile: '', message: '' });
       
       // Reset success message after 5 seconds
       setTimeout(() => {
@@ -53,11 +55,23 @@ const Contact = () => {
         <h4 className={`text-center mb-2 text-lg font-ovo animate-slide-up ${
           isDark ? 'text-blue-400' : 'text-blue-600'
         }`}>
-          Connect with me
+          <span className="relative inline-block">
+            Connect with me
+            <span className={`absolute -bottom-1 left-0 w-full h-px transform scale-x-0 origin-left ${
+              isDark ? 'bg-blue-500' : 'bg-blue-600'
+            } animate-expand-line`}></span>
+          </span>
         </h4>
 
-        <h2 className='text-center text-5xl font-ovo animate-slide-up' style={{ animationDelay: '0.1s' }}>
-          Get in touch
+        <h2 className={`text-center text-5xl font-bold animate-slide-up relative inline-block w-full ${
+          isDark ? 'text-white' : 'text-gray-900'
+        }`} style={{ animationDelay: '0.1s' }}>
+          <span className="relative">
+            Get in touch
+            <span className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 w-24 rounded-full ${
+              isDark ? 'bg-blue-500' : 'bg-blue-600'
+            } animate-expand`}></span>
+          </span>
         </h2>
 
         <p className={`text-center max-w-2xl mx-auto mt-6 mb-10 font-ovo animate-slide-up ${
@@ -102,6 +116,40 @@ const Contact = () => {
               />
             </div>
           </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            {/* Subject Input */}
+            <div className="relative">
+              <input 
+                type="text" 
+                name="subject" 
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="Email subject" 
+                className={`w-full p-4 rounded-lg border focus:outline-none focus:ring-2 transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-gray-800 border-gray-700 text-white focus:ring-blue-500' 
+                    : 'bg-white border-gray-200 text-gray-800 focus:ring-blue-300'
+                }`}
+              />
+            </div>
+
+            {/* Mobile Number Input */}
+            <div className="relative">
+              <input 
+                type="tel" 
+                name="mobile" 
+                value={formData.mobile}
+                onChange={handleChange}
+                placeholder="Mobile number" 
+                className={`w-full p-4 rounded-lg border focus:outline-none focus:ring-2 transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-gray-800 border-gray-700 text-white focus:ring-blue-500' 
+                    : 'bg-white border-gray-200 text-gray-800 focus:ring-blue-300'
+                }`}
+              />
+            </div>
+          </div>
 
           {/* Message Input */}
           <div className="mb-8">
@@ -125,18 +173,24 @@ const Contact = () => {
             <button 
               type="submit" 
               disabled={isSubmitting}
-              className={`group relative overflow-hidden rounded-full px-10 py-3 font-medium ${
-                isDark 
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white' 
-                  : 'bg-black hover:bg-gray-800 text-white'
-              } transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-                isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-lg hover:-translate-y-1'
-              }`}
+              className={`group inline-flex items-center justify-center gap-3 py-4 px-12 
+              rounded-full transition-all duration-500 hover:-translate-y-1 hover:shadow-xl
+              ${isDark 
+                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/20' 
+                : 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg shadow-blue-500/20'
+              } ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
             >
-              <span className="relative flex items-center gap-2">
-                {isSubmitting ? 'Submitting...' : 'Submit now'}
-                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-              </span>
+              <span className="font-medium">{isSubmitting ? 'Submitting...' : 'Submit now'}</span>
+              <svg 
+                width="20" 
+                height="20" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              >
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </button>
           </div>
 
@@ -145,7 +199,8 @@ const Contact = () => {
             <div className={`mt-6 p-4 rounded-lg text-center animate-fade-in ${
               isDark ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-800'
             }`}>
-              Thank you for your message! I'll get back to you soon.
+              <p className="font-medium">Thank you for your message!</p>
+              <p className="text-sm mt-1">I'll get back to you soon via email or phone if provided.</p>
             </div>
           )}
         </form>
