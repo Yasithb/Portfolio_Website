@@ -32,6 +32,34 @@ const certificatesData = [
     date: "2022",
     image: "/work-4.png",
     link: "#"
+  },
+  {
+    title: "Web Accessibility Guidelines",
+    issuer: "EDX",
+    date: "2022",
+    image: "/work-4.png",
+    link: "#"
+  },
+  {
+    title: "Web Accessibility Guidelines",
+    issuer: "EDX",
+    date: "2022",
+    image: "/work-4.png",
+    link: "#"
+  },
+  {
+    title: "Web Accessibility Guidelines",
+    issuer: "EDX",
+    date: "2022",
+    image: "/work-4.png",
+    link: "#"
+  },
+  {
+    title: "Web Accessibility Guidelines",
+    issuer: "EDX",
+    date: "2022",
+    image: "/work-4.png",
+    link: "#"
   }
 ];
 
