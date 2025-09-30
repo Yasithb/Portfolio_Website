@@ -37,7 +37,9 @@ const Header = () => {
         
         <div className='flex flex-row items-center gap-4 mt-4 animate-slide-up'
              style={{ animationDelay: '0.6s' }}>
-            <a href="#contact"
+            <a 
+                href="/sample-resume.pdf"
+                download="Yasith-Banula-CV.pdf"
                 className={`group inline-flex items-center justify-center gap-3 px-10 py-3 
                 rounded-full transition-all duration-500 hover:-translate-y-1 hover:shadow-xl
                 ${isDark 
