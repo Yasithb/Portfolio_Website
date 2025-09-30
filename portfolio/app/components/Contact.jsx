@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { assets } from '@/assets/assets'
 import Image from 'next/image'
 import { useTheme } from '../context/ThemeContext'
+import emailjs from '@emailjs/browser'
+import { EMAILJS_CONFIG } from '../../lib/emailjs'
 
 const Contact = () => {
   const { theme } = useTheme();
@@ -17,6 +19,7 @@ const Contact = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,21 +29,58 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError('');
+    setSubmitSuccess(false);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({ name: '', email: '', subject: '', mobile: '', message: '' });
+    try {
+      // Check if EmailJS is configured
+      if (EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY' || 
+          EMAILJS_CONFIG.SERVICE_ID === 'YOUR_SERVICE_ID' || 
+          EMAILJS_CONFIG.TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
+        throw new Error('EmailJS not configured. Please check your configuration.');
+      }
+
+      // Prepare email template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject || 'New Contact Form Submission',
+        mobile: formData.mobile,
+        message: formData.message,
+        to_email: 'yasith.banula06@gmail.com' // Replace with your email
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      if (response.status === 200) {
+        setSubmitSuccess(true);
+        setFormData({ name: '', email: '', subject: '', mobile: '', message: '' });
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setSubmitSuccess(false);
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setSubmitError(error.text || error.message || 'Failed to send email. Please try again.');
       
-      // Reset success message after 5 seconds
+      // Reset error message after 5 seconds
       setTimeout(() => {
-        setSubmitSuccess(false);
+        setSubmitError('');
       }, 5000);
-    }, 1500);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -200,7 +240,17 @@ const Contact = () => {
               isDark ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-800'
             }`}>
               <p className="font-medium">Thank you for your message!</p>
-              <p className="text-sm mt-1">I'll get back to you soon via email or phone if provided.</p>
+              <p className="text-sm mt-1">Your email has been sent successfully. I'll get back to you soon!</p>
+            </div>
+          )}
+
+          {/* Error Message */}
+          {submitError && (
+            <div className={`mt-6 p-4 rounded-lg text-center animate-fade-in ${
+              isDark ? 'bg-red-900 text-red-200' : 'bg-red-100 text-red-800'
+            }`}>
+              <p className="font-medium">Failed to send message</p>
+              <p className="text-sm mt-1">{submitError}</p>
             </div>
           )}
         </form>
