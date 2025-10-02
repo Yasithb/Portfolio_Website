@@ -9,56 +9,56 @@ const certificatesData = [
     title: "Introduction to HTML",
     issuer: "Sololearn",
     date: "2022",
-    image: "/work-1.png",
+    image: "/htmlintro.jpg",
     link: "https://www.sololearn.com/certificates/CC-5POWCF9N"
   },
   {
     title: "Web Design for Beginners",
     issuer: "University of Moratuwa",
     date: "2021",
-    image: "/work-2.png",
+    image: "/webdesign.jpg",
     link: "https://open.uom.lk/lms/mod/customcert/view.php?id=697&downloadown=1"
   },
   {
     title: "SQL (Advanced) Certification",
     issuer: "HackerRank",
     date: "2023",
-    image: "/work-3.png",
+    image: "/sql.jpg",
     link: "https://www.hackerrank.com/certificates/078c1d5b5724"
   },
   {
     title: "Python for Beginners",
     issuer: "University of Moratuwa",
     date: "2022",
-    image: "/work-4.png",
+    image: "/python.jpg",
     link: "https://open.uom.lk/lms/mod/customcert/view.php?id=675&downloadown=1"
   },
   {
     title: "Java Programming For Complete Beginners",
     issuer: "Alison",
     date: "2022",
-    image: "/work-4.png",
+    image: "/java.jpg",
     link: "https://alison.com/user/pdf/1470/1"
   },
   {
     title: "Introduction to Front-End Development",
     issuer: "Meta",
     date: "2022",
-    image: "/work-4.png",
+    image: "/web.jpg",
     link: "https://www.coursera.org/account/accomplishments/certificate/CWL8WHWD6AVN"
   },
   {
     title: "Agile Project Management",
     issuer: "HP LIFE",
     date: "2022",
-    image: "/work-4.png",
+    image: "/agile.jpg",
     link: "https://www.life-global.org/certificate/5e7f8578-a684-4965-b9aa-7062a0858e28"
   },
   {
     title: "Software Engineer Intern",
     issuer: "HackerRank",
     date: "2022",
-    image: "/work-4.png",
+    image: "/seeng.jpg",
     link: "https://www.hackerrank.com/certificates/3304af90dfd3"
   }
 ];
