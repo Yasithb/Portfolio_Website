@@ -102,34 +102,46 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Web Design',
-        bgImage: '/work-1.png',
+        title: 'Sabra Music',
+        description: 'Web Application',
+        bgImage: '/sabramusic.jpg',
+        link: 'https://github.com/Piumalhk/Sabra-Music',
+        techStack: 'HTML | CSS | JavaScript | Laravel (PHP Framework) | MySQL'
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
+        title: 'NoteMind',
+        description: 'Web Application',
         bgImage: '/work-2.png',
+        link: 'https://github.com/Yasithb/NoteMind',
+        techStack: 'MongoDB | Express.js | React.js | Node.js | Google Gemini API | nodemon | REST APIs'
     },
     {
-        title: 'Photography site',
-        description: 'Web Design',
-        bgImage: '/work-3.png',
+        title: 'LearnFlow',
+        description: 'Web Application',
+        bgImage: '/learnflow.jpg',
+        link: 'https://github.com/oditha4523/LearnFlow',
+        techStack: 'React | React Flow | Flask | LangChain | AI APIs | Retrieval-Augmented Generation (RAG)'
     },
     {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
+        title: 'Traverse',
+        description: 'Web Application',
+        bgImage: '/traverse.png',
+        link: 'https://github.com/Yasithb/Traverse',
+        techStack: 'HTML | CSS | Boostrap | JavaScript'
+    },
+    {
+        title: 'Harvest-Xpert',
+        description: 'Web Application',
+        bgImage: '/havest.jpg',
+        link: 'https://github.com/Yasithb/Harvest-Xpert',
+        techStack: 'HTML | CSS | Tailwind CSS | JavaScript | MySQL | Git'
+    },
+    {
+        title: 'EduBridge',
+        description: 'Web Application',
         bgImage: '/work-4.png',
-    },
-    {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
-        bgImage: '/work-4.png',
-    },
-    {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
-        bgImage: '/work-4.png',
+        link: 'https://github.com/Yasithb/EduBridge',
+        techStack: 'MongoDB | Express.js | React.js | Node.js | WhatsApp Business API | HTML | CSS | JavaScript'
     },
 ]
 
@@ -143,8 +155,8 @@ export const serviceData = [
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript React Js, Next Js' },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.Tech in Computer Science' },
+    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'HTML, CSS, JavaScript, PHP, C, Java, React Js, Next Js' },
+    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'BSc (Hons) in Computing and Information Systems' },
     { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
 ];
 
