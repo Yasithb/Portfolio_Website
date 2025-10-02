@@ -6,16 +6,16 @@ import { useTheme } from '../context/ThemeContext';
 // Education timeline data
 const educationData = [
   {
-    institution: "BEHANCE",
-    period: "2007-2008",
-    degree: "Diploma Development",
-    description: "The portfolio that recognize the talent and effort of the best web designers, developers and agencies in the world."
+    institution: "Sabaragamuwa University of Sri Lanka",
+    period: "2023 - Present",
+    degree: "BSc (Hons) in Computing and Information Systems",
+    description: "Pursuing a BSc (Hons) in Computing and Information Systems at Sabaragamuwa University of Sri Lanka, with a current GPA of 3.32. Building strong skills in software engineering, quality assurance, and modern web technologies."
   },
   {
-    institution: "BEHANCE",
-    period: "2007-2008",
-    degree: "Computer Science",
-    description: "The portfolio that recognize the talent and effort of the best web designers, developers and agencies in the world."
+    institution: "H/Walsmulla National School",
+    period: "Jan 2012 - Mar 2022",
+    degree: "G.C.E Advance Level Physical Science Stream",
+    description: "Completed Advanced Level (A/L) with A1 and C2 grade in the Physical Science stream at H/Walsmulla National School, building a strong foundation in mathematics, physics, and analytical thinking."
   }
 ];
 

@@ -63,58 +63,73 @@ const Work = () => {
           {workData.map((project, index) => (
             <div 
               key={index} 
-              className={`aspect-[4/3] bg-no-repeat bg-cover bg-center rounded-2xl
-                relative cursor-pointer group overflow-hidden shadow-xl
-                transform transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl ${
+              className={`bg-gradient-to-br ${
+                isDark 
+                  ? 'from-gray-800 to-gray-900 border-gray-700' 
+                  : 'from-gray-800 to-gray-900 border-gray-600'
+              } rounded-2xl border overflow-hidden shadow-xl
+                transform transition-all duration-500 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl
+                group cursor-pointer ${
                   headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
               style={{ 
-                backgroundImage: `url(${project.bgImage})`,
                 transitionDelay: `${0.3 + 0.1 * (index % 3)}s` 
               }}
             >
-              {/* Glass overlay for hover effect */}
-              <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500'></div>
-              
-              {/* Top badge */}
-              <div className={`absolute top-0 right-0 m-4 px-3 py-1 rounded-full text-xs font-medium
-                transform transition-all duration-500 origin-top-right scale-0 group-hover:scale-100
-                ${isDark ? 'bg-blue-500/90 text-white' : 'bg-blue-500/90 text-white'}`}>
-                {project.description}
-              </div>
-              
-              {/* Project info card with enhanced animations */}
-              <div className={`${
-                isDark ? 'bg-gray-800/90 backdrop-blur-sm text-white' : 'bg-white/90 backdrop-blur-sm text-gray-800'
-              } w-11/12 rounded-xl absolute -bottom-full left-1/2 -translate-x-1/2
-              py-4 px-5 flex items-center justify-between shadow-xl transition-all duration-500 
-              group-hover:bottom-4 border ${isDark ? 'border-gray-700' : 'border-gray-200'}`}>
-                
-                <div>
-                  <h3 className={`font-semibold text-lg ${isDark ? 'text-blue-300' : 'text-blue-600'}`}>
-                    {project.title}
-                  </h3>
-                  <p className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                    {project.description}
-                  </p>
-                </div>
-
-                <div className={`p-3 rounded-full ${
-                  isDark ? 'bg-blue-500 hover:bg-blue-400' : 'bg-blue-500 hover:bg-blue-600'
-                } transition-colors duration-300 text-white`}>
-                  <svg 
-                    width="16" 
-                    height="16" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="transition-transform duration-300 group-hover:rotate-45"
-                  >
-                    <path d="M14.4301 5.92993L20.5001 11.9999L14.4301 18.0699" stroke="currentColor" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M3.5 12H20.33" stroke="currentColor" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+              {/* Header Section */}
+              <div className="p-6 pb-4 text-center">
+                <h3 className="text-white text-2xl font-bold mb-2 group-hover:text-blue-300 transition-colors duration-300">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 text-sm mb-3 group-hover:text-gray-200 transition-colors duration-300">
+                  {project.description}
+                </p>
+                <div className="text-gray-400 text-xs font-medium tracking-wider group-hover:text-blue-300 transition-colors duration-300">
+                  {project.techStack || "REACT | NODE.JS | MONGODB | EXPRESS"}
                 </div>
               </div>
+              
+              {/* Image Section */}
+              <div className="px-4 pb-6">
+                <div className="relative overflow-hidden rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-300">
+                  <div className="aspect-[16/10] bg-gradient-to-br from-blue-100 to-blue-50 relative">
+                    <Image
+                      src={project.bgImage}
+                      alt={project.title}
+                      fill
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                    
+                    {/* Simple overlay on hover */}
+                    <div className="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* View Project Button */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                      <a 
+                        href={project.link || '#'} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="bg-white/90 backdrop-blur-sm text-gray-800 px-6 py-3 rounded-full font-medium hover:bg-white transition-all duration-300 shadow-lg transform translate-y-4 group-hover:translate-y-0 hover:scale-105 flex items-center gap-2"
+                      >
+                        <span>View Project</span>
+                        <svg 
+                          width="16" 
+                          height="16" 
+                          viewBox="0 0 24 24" 
+                          fill="none" 
+                          stroke="currentColor"
+                          className="transition-transform duration-300 hover:translate-x-1 hover:-translate-y-1"
+                        >
+                          <path d="M7 17L17 7M17 7H7M17 7V17" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Simple bottom accent line */}
+              <div className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </div>
           ))}
         </div>

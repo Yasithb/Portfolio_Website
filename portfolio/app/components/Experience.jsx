@@ -6,22 +6,28 @@ import { useTheme } from '../context/ThemeContext';
 // Experience data
 const experienceData = [
   {
-    company: "DESIGNWAY",
-    period: "2018-Present",
-    position: "Senior UI/UX Designer",
-    description: "Led UI/UX design for multiple high-profile web applications and mobile products, resulting in a 40% increase in user engagement and satisfaction."
+    company: "UI/UX Mastermind",
+    period: "Mar 2025 - Present",
+    position: "Graphic Designer",
+    description: "Working as a Graphic Designer at UI/UX Mastermind since March 2025, creating visually appealing designs and enhancing user experiences through creative graphics and layouts."
   },
   {
-    company: "WEBCRAFT",
-    period: "2015-2018",
-    position: "Frontend Developer",
-    description: "Developed responsive, cross-browser compatible websites and web applications using React, Next.js, and modern CSS frameworks."
+    company: "YouTube",
+    period: "May 2024 - Present",
+    position: "Content Creator",
+    description: "Content Creator at CodeHavenAcademy on YouTube, producing educational tutorials and coding tips to help developers solve problems, learn effectively, and grow their programming skills."
   },
   {
-    company: "CREATIVEMINDS",
-    period: "2012-2015",
-    position: "Web Designer",
-    description: "Created visually appealing and user-friendly interfaces for clients across various industries, focusing on accessibility and performance."
+    company: "Fiverr",
+    period: "Jun 2022 - Sep 2023",
+    position: "Freelance Graphic Designer",
+    description: "Freelance Graphic Designer on Fiverr from June 2022 to September 2023, creating custom designs and visual content for clients worldwide."
+  },
+  {
+    company: "FlexyCode (Internship)",
+    period: "Dec 2022 - Mar 2023",
+    position: "Software Developer",
+    description: "Software Developer intern at FlexyCode from December 2022 to March 2023, working on various projects and gaining hands-on experience in software development."
   }
 ];
 

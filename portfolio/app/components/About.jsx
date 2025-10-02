@@ -20,7 +20,7 @@ const About = () => {
           Introduction
         </h4>
 
-        <h2 className='text-center text-5xl font-bold animate-slide-up relative inline-block w-full'>
+        <h2 className='text-center text-5xl font-bold animate-slide-up relative inline-block w-full mb-8'>
           <span className="relative">
             About me
             <span className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 w-24 rounded-full ${
@@ -30,7 +30,7 @@ const About = () => {
         </h2>
       </div>
 
-      <div className='flex flex-col lg:flex-row items-center gap-20 my-20 pt-10'>
+      <div className='flex flex-col lg:flex-row items-center gap-20 my-12'>
         <div className='w-64 sm:w-80 max-w-none animate-slide-right relative group'>
           {/* Decorative elements */}
           <div className={`absolute -inset-4 rounded-3xl bg-gradient-to-r from-blue-500/30 via-blue-400/20 to-blue-600/30 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-1000 animate-pulse-slow -z-10 ${
@@ -68,11 +68,8 @@ const About = () => {
             <p className={`mb-10 max-w-2xl font-ovo leading-relaxed text-lg relative ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              I am a <span className={`font-semibold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>passionate frontend developer</span> with a knack for creating beautiful and functional web applications. 
-              I love to learn new technologies and improve my skills. I am always looking for new challenges and 
-              opportunities to grow as a developer. I am an experienced Frontend Developer with over a decade of 
-              professional expertise in the field. Throughout my career, I have had the privilege of collaborating with 
-              prestigious organizations, contributing to their success and growth.
+              I am a <span className={`font-semibold ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>dedicated IT undergraduate</span> with a strong foundation in SE and QA. 
+              With skills in MERN stack development and hands-on experience in software testing, I focus on building reliable, high-quality applications. I am passionate about learning new technologies, improving my craft, and contributing to impactful projects. As a quick learner and team player, I am always eager to take on new challenges and grow as a developer while ensuring software reliability, usability, and performance.
             </p>
           </div>
 

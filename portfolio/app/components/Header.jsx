@@ -30,9 +30,7 @@ const Header = () => {
         
         <p className={`text-base md:text-lg mt-4 animate-slide-up ${isDark ? 'text-gray-300' : ''}`}
            style={{ animationDelay: '0.4s' }}>
-          Energetic and enthusiastic undergraduate student pursuing a BSc (Hons) in Industrial Information Technology at 
-          University. Driven by a strong interest in Quality Assurance, Business Analysis and Project Management 
-          with a focus on bridging the gap between technology and business needs.
+          Dedicated IT undergraduate with a solid foundation in software engineering and quality assurance. Skilled in MERN stack development and software testing, with a passion for building efficient, reliable, and high-quality applications while continuously learning and contributing to impactful projects.
         </p>
         
         <div className='flex flex-row items-center gap-4 mt-4 animate-slide-up'
@@ -85,19 +83,19 @@ const Header = () => {
         
         <div className='flex flex-row items-center gap-3 mt-4 animate-slide-up'
              style={{ animationDelay: '0.8s' }}>
-            <a href="#" className='w-10 h-10 flex items-center justify-center rounded-full border border-blue-500 text-blue-500 hover:bg-blue-50 transition-all duration-300'>
+            <a href="https://www.facebook.com/share/16jtw3bTRE/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className='w-10 h-10 flex items-center justify-center rounded-full border border-blue-500 text-blue-500 hover:bg-blue-50 transition-all duration-300'>
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="#" className='w-10 h-10 flex items-center justify-center rounded-full border border-blue-500 text-blue-500 hover:bg-blue-50 transition-all duration-300'>
+            <a href="https://github.com/Yasithb" target="_blank" rel="noopener noreferrer" className='w-10 h-10 flex items-center justify-center rounded-full border border-blue-500 text-blue-500 hover:bg-blue-50 transition-all duration-300'>
               <i className="fab fa-github"></i>
             </a>
-            <a href="#" className='w-10 h-10 flex items-center justify-center rounded-full border border-blue-500 text-blue-500 hover:bg-blue-50 transition-all duration-300'>
+            <a href="https://www.linkedin.com/in/yasith-banula-20964a27a" target="_blank" rel="noopener noreferrer" className='w-10 h-10 flex items-center justify-center rounded-full border border-blue-500 text-blue-500 hover:bg-blue-50 transition-all duration-300'>
               <i className="fab fa-linkedin-in"></i>
             </a>
-            <a href="#" className='w-10 h-10 flex items-center justify-center rounded-full border border-blue-500 text-blue-500 hover:bg-blue-50 transition-all duration-300'>
+            <a href="https://www.instagram.com/yasithbanula?igsh=MXY5Z3hoemsxYmJybw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className='w-10 h-10 flex items-center justify-center rounded-full border border-blue-500 text-blue-500 hover:bg-blue-50 transition-all duration-300'>
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="#" className='w-10 h-10 flex items-center justify-center rounded-full border border-blue-500 text-blue-500 hover:bg-blue-50 transition-all duration-300'>
+            <a href="https://www.blogger.com/profile/06827121662486003187" target="_blank" rel="noopener noreferrer" className='w-10 h-10 flex items-center justify-center rounded-full border border-blue-500 text-blue-500 hover:bg-blue-50 transition-all duration-300'>
               <i className="fab fa-blogger-b"></i>
             </a>
         </div>
