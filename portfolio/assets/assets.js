@@ -111,7 +111,7 @@ export const workData = [
     {
         title: 'NoteMind',
         description: 'Web Application',
-        bgImage: '/work-2.png',
+        bgImage: '/notemind.png',
         link: 'https://github.com/Yasithb/NoteMind',
         techStack: 'MongoDB | Express.js | React.js | Node.js | Google Gemini API | nodemon | REST APIs'
     },
