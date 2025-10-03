@@ -1,29 +1,65 @@
 import Image from 'next/image'
 import { assets } from '@/assets/assets'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useTheme } from '../context/ThemeContext'
 
 const Header = () => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
+  // Typing animation state
+  const [currentText, setCurrentText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(100);
+
+  const textArray = ['Full-Stack Developer', 'Quality Assurance Engineer', 'Software Automation Tester'];
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const i = loopNum % textArray.length;
+      const fullText = textArray[i];
+
+      setCurrentText(isDeleting 
+        ? fullText.substring(0, currentText.length - 1)
+        : fullText.substring(0, currentText.length + 1)
+      );
+
+      setTypingSpeed(isDeleting ? 50 : 100);
+
+      if (!isDeleting && currentText === fullText) {
+        setTimeout(() => setIsDeleting(true), 1500);
+      } else if (isDeleting && currentText === '') {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, loopNum, typingSpeed, textArray]);
+
   return (
     <div className='w-11/12 max-w-7xl mx-auto h-screen pt-24 flex flex-row
     items-center justify-between'>
       <div className='max-w-2xl flex flex-col gap-6'>
         <div className='flex flex-col'>
-          <h1 className='text-4xl sm:text-6xl lg:text-7xl font-bold animate-slide-up mb-2'>
+          <h1 className='text-4xl sm:text-6xl lg:text-7xl font-extrabold animate-slide-up mb-2'>
             Hi, I'm Yasith
           </h1>
-          <h1 className='text-4xl sm:text-6xl lg:text-7xl font-bold animate-slide-up' 
+          <h1 className='text-4xl sm:text-6xl lg:text-7xl font-extrabold animate-slide-up' 
               style={{ animationDelay: '0.2s' }}>
             Banula
           </h1>
           
-          <div className='mt-3 text-xl md:text-2xl lg:text-3xl font-ovo overflow-hidden whitespace-nowrap'
+          <div className='mt-3 text-xl md:text-2xl lg:text-3xl font-ovo'
               style={{ animationDelay: '0.3s' }}>
-            <span className="relative inline-block animate-typewriter">
-              <span className="animate-typewriter-color">Full-Stack Developer & QA Enthusiast</span>
+            <span className="relative inline-block">
+              <span className={`font-bold ${isDark ? 'text-blue-400' : 'text-blue-600'} transition-colors duration-300`}>
+                {currentText}
+                <span className={`inline-block w-0.5 h-8 ml-1 ${isDark ? 'bg-blue-400' : 'bg-blue-600'} animate-pulse`}></span>
+              </span>
             </span>
           </div>
         </div>
