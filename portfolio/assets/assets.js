@@ -1,5 +1,6 @@
 import user_image from './user-image.png';
 import user_image1 from './user-image1.jpeg';
+import user_image2 from './user-image2.jpg';
 import code_icon from './code-icon.png';
 import code_icon_dark from './code-icon-dark.png';
 import edu_icon from './edu-icon.png';
@@ -51,6 +52,7 @@ import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 export const assets = {
     user_image,
     user_image1,
+    user_image2,
     code_icon,
     code_icon_dark,
     edu_icon,

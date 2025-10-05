@@ -142,7 +142,7 @@ const Header = () => {
         <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-blue-600 to-blue-400 opacity-50 animate-spin-slow"></div>
         <div className="relative rounded-full overflow-hidden border-2 border-blue-500 w-[400px] h-[400px]">
           <Image 
-            src={assets.user_image1 || assets.profile_img}
+            src={assets.user_image2 || assets.profile_img}
             alt="Profile picture"
             width={400}
             height={400} 
