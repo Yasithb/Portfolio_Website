@@ -118,18 +118,18 @@ const Certificates = () => {
             style={{ animationDelay: `${0.15 * (index + 1)}s` }}
           >
             {/* Certificate image */}
-            <div className="h-40 w-full relative overflow-hidden">
+            <div className="h-48 w-full relative overflow-hidden bg-gray-100">
               <Image 
                 src={cert.image} 
                 alt={cert.title}
                 fill
-                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                className="object-contain group-hover:scale-105 transition-transform duration-700 p-2"
               />
               <div className={`absolute inset-0 ${
                 isDark 
-                  ? 'bg-gradient-to-t from-gray-900 to-transparent opacity-70' 
-                  : 'bg-gradient-to-t from-gray-800 to-transparent opacity-50'
-              } group-hover:opacity-80 transition-opacity duration-300`}></div>
+                  ? 'bg-gradient-to-t from-gray-900/30 to-transparent opacity-0' 
+                  : 'bg-gradient-to-t from-gray-800/30 to-transparent opacity-0'
+              } group-hover:opacity-60 transition-opacity duration-300`}></div>
               
               <div className={`absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ${
                 isDark ? 'text-white' : 'text-white'

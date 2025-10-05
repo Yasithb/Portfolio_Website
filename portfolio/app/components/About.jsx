@@ -122,7 +122,7 @@ const About = () => {
             <h4 className={`font-semibold text-xl relative inline-block ${
               isDark ? 'text-blue-400' : 'text-blue-600'
             } animate-slide-up`} style={{ animationDelay: '0.5s' }}>
-              Tools I use
+              Tools and Technologies I use
               <span className={`absolute -bottom-1 left-0 h-0.5 w-full rounded-full transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${
                 isDark ? 'bg-blue-500' : 'bg-blue-600'
               }`}></span>

@@ -97,7 +97,7 @@ const Work = () => {
                       src={project.bgImage}
                       alt={project.title}
                       fill
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
                     />
                     
                     {/* Simple overlay on hover */}

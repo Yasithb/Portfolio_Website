@@ -52,11 +52,14 @@ const Skills = () => {
           Introduction
         </h4>
         
-        <h2 className="text-center text-5xl font-bold animate-slide-up relative inline-block w-full text-white">
+        <h2 className={`text-center text-5xl font-bold animate-slide-up relative inline-block w-full ${
+          isDark ? 'text-white' : 'text-gray-900'
+        }`}>
           <span className="relative">
             My Skills
-            <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 w-24 rounded-full 
-              bg-blue-500 animate-expand"></span>
+            <span className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 w-24 rounded-full ${
+              isDark ? 'bg-blue-500' : 'bg-blue-600'
+            } animate-expand`}></span>
           </span>
         </h2>
       </div>
