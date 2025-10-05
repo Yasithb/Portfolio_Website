@@ -17,6 +17,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./portfolio  # 👈 All commands now run inside the portfolio folder
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,6 +29,7 @@ jobs:
         with:
           node-version: "20"
           cache: "npm"
+          cache-dependency-path: ./portfolio/package-lock.json  # 👈 Tell it where the lock file is
 
       - name: Install dependencies
         run: npm install
@@ -44,7 +48,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./portfolio/out  # 👈 Adjusted to match export directory
 
   deploy:
     environment:
